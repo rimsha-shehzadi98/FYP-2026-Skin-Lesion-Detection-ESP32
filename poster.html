@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FYP Poster – Acne & Skin Disease Detection</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Lato',Arial,sans-serif;background:#cdd5e8;display:flex;justify-content:center;padding:24px;min-height:100vh;}
+.poster{width:1122px;background:#fff;box-shadow:0 10px 50px rgba(0,0,0,0.28);border-radius:4px;overflow:hidden;}
+
+/* HEADER */
+.hdr{background:linear-gradient(135deg,#0a2260 0%,#1a4fba 100%);padding:13px 22px;display:flex;align-items:center;gap:16px;border-bottom:4px solid #f5c518;}
+.hdr-logo{width:62px;height:62px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,0.3);}
+.hdr-logo .lt{font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;color:#0a2260;}
+.hdr-logo .lb{font-size:7px;font-weight:700;color:#333;text-align:center;line-height:1.3;}
+.hdr-mid{flex:1;text-align:center;}
+.hdr-mid .uni{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;color:#fff;letter-spacing:1.5px;text-transform:uppercase;}
+.hdr-mid .dept{font-size:12px;color:rgba(255,255,255,0.8);margin-top:3px;}
+.hdr-mid .fyp-badge{display:inline-block;margin-top:5px;background:#f5c518;color:#111;font-size:9px;font-weight:700;padding:2px 14px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;}
+.hdr-sup{text-align:center;flex-shrink:0;}
+.hdr-sup .sup-lbl{font-size:8px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;}
+.hdr-sup .sup-name{font-size:11px;font-weight:700;color:#fff;margin-top:2px;}
+
+/* TITLE */
+.title-band{background:linear-gradient(135deg,#1a4fba 0%,#0a2260 100%);padding:14px 28px 12px;text-align:center;}
+.title-band h1{font-family:'Oswald',sans-serif;font-size:27px;font-weight:700;color:#fff;text-transform:uppercase;line-height:1.2;letter-spacing:1px;}
+.author-row{margin-top:9px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.a-pill{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.28);border-radius:20px;padding:3px 16px;color:#e8f0ff;font-size:12px;font-weight:600;}
+.a-sep{color:rgba(255,255,255,0.35);font-size:18px;}
+.sup-line{margin-top:4px;font-size:11px;color:rgba(255,255,255,0.55);}
+
+/* CONTENT */
+.content{background:#eef2fb;padding:14px 16px 16px;}
+
+/* SECTION LABEL */
+.slbl{display:inline-flex;align-items:center;gap:6px;font-family:'Oswald',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:3px 12px 3px 8px;border-radius:3px;margin-bottom:8px;}
+.slbl .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.y{background:#f5c518;color:#111;}.y .dot{background:#111;}
+.b{background:#0a2260;color:#fff;}.b .dot{background:#f5c518;}
+.g{background:#1b5e20;color:#fff;}.g .dot{background:#a5d6a7;}
+
+/* CARD */
+.card{background:#fff;border-radius:8px;border:1px solid #d0daf5;padding:12px 14px;box-shadow:0 2px 10px rgba(13,43,110,0.07);}
+.card p,.card li{font-size:11px;line-height:1.6;color:#222;text-align:justify;}
+.card ul{padding-left:15px;margin-top:3px;}
+.card ul li{margin-bottom:4px;}
+.card ul li::marker{color:#1a4fba;}
+
+/* ROW 1 — Intro + Objectives */
+.row1{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+
+/* ROW 2 — Methodology + Results + Output */
+.row2{display:grid;grid-template-columns:175px 1fr 1fr;gap:12px;margin-bottom:12px;}
+
+/* METHODOLOGY */
+.msteps{display:flex;flex-direction:column;align-items:center;padding-top:4px;}
+.mstep{display:flex;align-items:center;gap:9px;width:100%;}
+.mstep-icon{width:40px;height:40px;border-radius:50%;border:2px solid #1a4fba;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff;}
+.mstep-icon svg{width:20px;height:20px;}
+.mstep-text .mn{font-size:8.5px;font-weight:700;color:#1a4fba;text-transform:uppercase;letter-spacing:0.5px;}
+.mstep-text .ml{font-size:10.5px;font-weight:700;color:#111;line-height:1.2;}
+.mstep-text .ms{font-size:9px;color:#555;line-height:1.3;margin-top:1px;}
+.marrow{display:flex;padding-left:19px;margin:2px 0;}
+.marrow svg{width:13px;height:13px;}
+
+/* ROW 3 — Technologies + Primary Detection */
+.row3{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+
+/* Tech grid */
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:4px;}
+.tech-item{display:flex;align-items:center;gap:7px;padding:16px 9px;border-radius:6px;background:#f5f7ff;border:1px solid #d0daf5;}
+.tech-icon svg{width:20px;height:20px;}
+.tech-name{font-size:11.5px;font-weight:700;color:#0a2260;}
+.tech-desc{font-size:9.5px;color:#666;line-height:1.2;}
+
+/* Timeline items */
+.tl-item{display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+.tl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.tl-bar-wrap{flex:1;height:7px;background:#e8edf8;border-radius:4px;overflow:hidden;}
+.tl-bar{height:100%;border-radius:4px;}
+.tl-lbl{font-size:8.5px;font-weight:700;min-width:70px;text-align:right;}
+
+/* CONCLUSION */
+.conclusion-card{background:#fff;border-radius:8px;border:1px solid #d0daf5;border-left:5px solid #0a2260;padding:12px 14px;box-shadow:0 2px 10px rgba(13,43,110,0.07);}
+.conclusion-card ul{padding-left:15px;margin-top:5px;}
+.conclusion-card ul li{font-size:11px;line-height:1.6;color:#222;margin-bottom:4px;text-align:justify;}
+.conclusion-card ul li::marker{color:#f5c518;font-size:13px;}
+
+/* FOOTER */
+.footer{background:linear-gradient(135deg,#0a2260 0%,#1a4fba 100%);padding:8px 22px;display:flex;align-items:center;justify-content:space-between;border-top:3px solid #f5c518;}
+.fl{font-size:10px;color:rgba(255,255,255,0.82);}
+.fr{background:#f5c518;color:#111;font-size:9px;font-weight:700;padding:3px 14px;border-radius:20px;letter-spacing:0.5px;}
+</style>
+</head>
+<body>
+<div class="poster">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-logo"><img src="data:image/png;base64,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" alt="GCU Logo" style="width:82%;height:82%;object-fit:contain;"></div>
+  <div class="hdr-mid">
+    <div class="uni">Acne &amp; Skin Disease Detection Using Image Data on ESP32-CAM</div>
+    <div class="dept">Iqra Waheed (221982) &nbsp;·&nbsp; Rimsha Shehzadi (222027)</div>
+    <div class="fyp-badge">Final Year Project &nbsp;2022–2026</div>
+  </div>
+  <div class="hdr-sup">
+    <div class="sup-lbl">Supervisor</div>
+    <div class="sup-name">Dr. Usama Ahmed</div>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ROW 1: Introduction + Objectives -->
+<div class="row1">
+  <div class="card">
+    <div class="slbl y"><div class="dot"></div>Introduction</div>
+    <p>Skin diseases such as Basal Cell Carcinoma (BCC) and Nevus are among the most prevalent dermatological conditions worldwide, requiring early and accurate diagnosis for effective treatment. Conventional detection relies on clinical specialist visits that remain inaccessible in rural and resource-limited areas. This project presents a real-time embedded AI system deployed on the low-cost ESP32-CAM microcontroller, capable of detecting BCC and Nevus directly at the edge without any cloud dependency. A FOMO MobileNetV2 model trained on 2,800 labelled dermoscopic images was deployed via a custom Wi-Fi web dashboard that captures images, runs 534 ms on-device inference, and displays results with confidence scores — making early skin disease screening affordable and accessible for all communities.</p>
+  </div>
+<div class="card" style="display:flex;flex-direction:column;">
+    <div class="slbl b" style="align-self:flex-start;"><div class="dot"></div>Objectives</div>
+    <ul style="flex:1;display:flex;flex-direction:column;justify-content:space-between;margin-top:6px;">
+      <li>To design and deploy a real-time skin lesion detection system on a low-cost ESP32-CAM embedded device without cloud dependency.</li>
+      <li>To train a FOMO MobileNetV2 model capable of accurately classifying BCC and Nevus skin disease categories from dermoscopic images.</li>
+      <li>To develop a Wi-Fi web dashboard providing live camera preview, sequential image capture, and real-time result visualization.</li>
+      <li>To evaluate system performance using F1 Score, confidence metrics, confusion matrix, and real-time inference timing.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ROW 2: Methodology + Results Charts + System Output -->
+<div class="row2">
+
+  <!-- METHODOLOGY -->
+  <div class="card">
+    <div class="slbl y"><div class="dot"></div>Methodology</div>
+    <div class="msteps">
+      <div class="mstep">
+        <div class="mstep-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4fba" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg></div>
+        <div class="mstep-text"><div class="mn">Step 1</div><div class="ml">Problem Identification</div><div class="ms">Skin disease gaps in rural healthcare</div></div>
+      </div>
+      <div class="marrow"><svg viewBox="0 0 14 14" fill="none" stroke="#1a4fba" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="11"/><polyline points="3,7 7,11 11,7"/></svg></div>
+      <div class="mstep">
+        <div class="mstep-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4fba" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        <div class="mstep-text"><div class="mn">Step 2</div><div class="ml">Literature Review</div><div class="ms">Existing AI skin detection approaches</div></div>
+      </div>
+      <div class="marrow"><svg viewBox="0 0 14 14" fill="none" stroke="#1a4fba" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="11"/><polyline points="3,7 7,11 11,7"/></svg></div>
+      <div class="mstep">
+        <div class="mstep-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4fba" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <div class="mstep-text"><div class="mn">Step 3</div><div class="ml">Dataset Collection</div><div class="ms">2,800 images: HAM10000 (BCC+Nevus)</div></div>
+      </div>
+      <div class="marrow"><svg viewBox="0 0 14 14" fill="none" stroke="#1a4fba" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="11"/><polyline points="3,7 7,11 11,7"/></svg></div>
+      <div class="mstep">
+        <div class="mstep-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4fba" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8"/><line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/></svg></div>
+        <div class="mstep-text"><div class="mn">Step 4</div><div class="ml">Model Training</div><div class="ms">FOMO MobileNetV2, 40 epochs, Edge Impulse</div></div>
+      </div>
+      <div class="marrow"><svg viewBox="0 0 14 14" fill="none" stroke="#1a4fba" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="11"/><polyline points="3,7 7,11 11,7"/></svg></div>
+      <div class="mstep">
+        <div class="mstep-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4fba" stroke-width="1.8" stroke-linecap="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="#1a4fba"/></svg></div>
+        <div class="mstep-text"><div class="mn">Step 5</div><div class="ml">Deployment &amp; Evaluation</div><div class="ms">ESP32-CAM + Wi-Fi dashboard + F1 scoring</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS & DISCUSSIONS -->
+  <div class="card">
+    <div class="slbl b"><div class="dot"></div>Results &amp; Discussions</div>
+
+    <!-- Nevus Primary Detection Banner -->
+    <div style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);border:2px solid #1565c0;border-radius:7px;padding:9px 13px;margin-bottom:10px;display:flex;align-items:center;gap:12px;">
+      <div style="width:46px;height:46px;border-radius:50%;border:2px solid #1565c0;display:flex;align-items:center;justify-content:center;background:#fff;flex-shrink:0;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="#1565c0"/></svg>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:8px;font-weight:700;color:#1565c0;text-transform:uppercase;letter-spacing:1px;">✦ Primary Detection — Highest Accuracy</div>
+        <div style="font-size:17px;font-weight:700;color:#0d47a1;line-height:1.1;margin-top:1px;">Nevus <span style="font-size:11px;font-weight:400;color:#555;">(Melanocytic Mole)</span></div>
+        <div style="font-size:9.5px;color:#333;margin-top:2px;">Avg Confidence: <b style="color:#0d47a1;">88.4%</b> &nbsp;·&nbsp; F1 Score: <b>0.86</b> &nbsp;·&nbsp; Outperforms BCC — highest detection accuracy</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px;text-align:right;flex-shrink:0;">
+        <div style="font-size:10.5px;"><b style="color:#1565c0;">88.4%</b> Nevus</div>
+        <div style="font-size:10.5px;"><b style="color:#5e35b1;">80.4%</b> BCC</div>
+        <div style="font-size:10.5px;"><b style="color:#e65100;">81.0%</b> Overall</div>
+      </div>
+    </div>
+
+    <!-- Bar Charts -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div style="background:#f7f9ff;border:1px solid #dde5f8;border-radius:6px;padding:9px 10px;">
+        <div style="font-size:8.5px;color:#555;text-align:center;margin-bottom:6px;font-style:italic;">Fig 1: Training Dataset Distribution</div>
+        <svg width="100%" height="80" viewBox="0 0 180 80">
+          <line x1="24" y1="4" x2="24" y2="66" stroke="#dde5f8" stroke-width="1"/>
+          <line x1="24" y1="66" x2="176" y2="66" stroke="#dde5f8" stroke-width="1"/>
+          <rect x="36" y="6" width="30" height="60" rx="3" fill="#7e57c2" opacity="0.88"/>
+          <rect x="86" y="6" width="30" height="60" rx="3" fill="#1565c0" opacity="0.88"/>
+          <rect x="136" y="36" width="30" height="30" rx="3" fill="#78909c" opacity="0.75"/>
+          <text x="51" y="3" text-anchor="middle" font-size="7.5" fill="#555">1,400</text>
+          <text x="101" y="3" text-anchor="middle" font-size="7.5" fill="#555">1,400</text>
+          <text x="151" y="33" text-anchor="middle" font-size="7.5" fill="#555">~700</text>
+          <text x="51" y="76" text-anchor="middle" font-size="8" font-weight="bold" fill="#5e35b1">BCC</text>
+          <text x="101" y="76" text-anchor="middle" font-size="8" font-weight="bold" fill="#1565c0">Nevus</text>
+          <text x="151" y="76" text-anchor="middle" font-size="8" fill="#546e7a">Backgd</text>
+        </svg>
+      </div>
+      <div style="background:#f7f9ff;border:1px solid #dde5f8;border-radius:6px;padding:9px 10px;">
+        <div style="font-size:8.5px;color:#555;text-align:center;margin-bottom:6px;font-style:italic;">Fig 2: F1 Score per Class — Overall 83.9%</div>
+        <svg width="100%" height="80" viewBox="0 0 180 80">
+          <line x1="24" y1="4" x2="24" y2="66" stroke="#dde5f8" stroke-width="1"/>
+          <line x1="24" y1="66" x2="176" y2="66" stroke="#dde5f8" stroke-width="1"/>
+          <rect x="36" y="17" width="30" height="49" rx="3" fill="#7e57c2" opacity="0.88"/>
+          <rect x="86" y="13" width="30" height="53" rx="3" fill="#1565c0" opacity="0.88"/>
+          <rect x="136" y="6" width="30" height="60" rx="3" fill="#2e7d32" opacity="0.88"/>
+          <text x="51" y="14" text-anchor="middle" font-size="7.5" fill="#555">0.82</text>
+          <text x="101" y="10" text-anchor="middle" font-size="7.5" fill="#555">0.86</text>
+          <text x="151" y="3" text-anchor="middle" font-size="7.5" fill="#555">1.00</text>
+          <text x="51" y="76" text-anchor="middle" font-size="8" font-weight="bold" fill="#5e35b1">BCC</text>
+          <text x="101" y="76" text-anchor="middle" font-size="8" font-weight="bold" fill="#1565c0">Nevus</text>
+          <text x="151" y="76" text-anchor="middle" font-size="8" fill="#2e7d32">Backgd</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Confidence Trend from real screenshot -->
+    <div style="background:#f7f9ff;border:1px solid #dde5f8;border-radius:6px;padding:9px 11px;">
+      <div style="font-size:9.5px;font-weight:700;color:#1a4fba;margin-bottom:6px;">Confidence Trend (10 captures)</div>
+      <svg width="100%" height="65" viewBox="0 0 380 65" preserveAspectRatio="none">
+        <line x1="0" y1="16" x2="380" y2="16" stroke="#e0e8f5" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <line x1="0" y1="32" x2="380" y2="32" stroke="#e0e8f5" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <line x1="0" y1="48" x2="380" y2="48" stroke="#e0e8f5" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <!-- data from screenshot: 97,96,59,84,86,none,none,90,71,57,61,95 mapped to y (60=0%, 5=100%) -->
+        <polyline points="0,8 38,9 76,46 114,18 152,15 228,12 266,40 304,44 342,40 380,8"
+          fill="none" stroke="#1a4fba" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="0"   cy="8"  r="3.5" fill="#1565c0"/><circle cx="38"  cy="9"  r="3.5" fill="#1565c0"/>
+        <circle cx="76"  cy="46" r="3.5" fill="#7e57c2"/><circle cx="114" cy="18" r="3.5" fill="#1565c0"/>
+        <circle cx="152" cy="15" r="3.5" fill="#7e57c2"/><circle cx="228" cy="12" r="3.5" fill="#7e57c2"/>
+        <circle cx="266" cy="40" r="3.5" fill="#1565c0"/><circle cx="304" cy="44" r="3.5" fill="#7e57c2"/>
+        <circle cx="342" cy="40" r="3.5" fill="#7e57c2"/><circle cx="380" cy="8"  r="3.5" fill="#1565c0"/>
+        <text x="0"   y="62" font-size="7" fill="#aaa" text-anchor="middle">1</text>
+        <text x="38"  y="62" font-size="7" fill="#aaa" text-anchor="middle">2</text>
+        <text x="76"  y="62" font-size="7" fill="#aaa" text-anchor="middle">3</text>
+        <text x="114" y="62" font-size="7" fill="#aaa" text-anchor="middle">4</text>
+        <text x="152" y="62" font-size="7" fill="#aaa" text-anchor="middle">5</text>
+        <text x="228" y="62" font-size="7" fill="#aaa" text-anchor="middle">7</text>
+        <text x="266" y="62" font-size="7" fill="#aaa" text-anchor="middle">8</text>
+        <text x="304" y="62" font-size="7" fill="#aaa" text-anchor="middle">9</text>
+        <text x="342" y="62" font-size="7" fill="#aaa" text-anchor="middle">10</text>
+        <text x="380" y="62" font-size="7" fill="#aaa" text-anchor="middle">11</text>
+      </svg>
+      <div style="display:flex;gap:12px;margin-top:3px;">
+        <span style="font-size:8px;color:#7e57c2;">● BCC captures</span>
+        <span style="font-size:8px;color:#1565c0;">● Nevus captures</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SYSTEM OUTPUT — Detection Timeline -->
+  <div class="card">
+   <div class="slbl b" style="align-self:flex-start;"><div class="dot"></div>System Output</div>
+    <!-- 3 metric pills -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:10px;">
+      <div style="background:#ede7f6;border:1px solid #b39ddb;border-radius:7px;padding:8px;text-align:center;">
+        <div style="font-size:17px;font-weight:700;color:#5e35b1;font-family:'Oswald',sans-serif;">80.4%</div>
+        <div style="font-size:8px;color:#555;margin-top:1px;">BCC Avg Confidence</div>
+      </div>
+      <div style="background:#e3f2fd;border:1px solid #90caf9;border-radius:7px;padding:8px;text-align:center;">
+        <div style="font-size:17px;font-weight:700;color:#1565c0;font-family:'Oswald',sans-serif;">88.4%</div>
+        <div style="font-size:8px;color:#555;margin-top:1px;">Nevus Avg Confidence</div>
+      </div>
+      <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:7px;padding:8px;text-align:center;">
+        <div style="font-size:17px;font-weight:700;color:#e65100;font-family:'Oswald',sans-serif;">81.0%</div>
+        <div style="font-size:8px;color:#555;margin-top:1px;">Overall Avg Accuracy</div>
+      </div>
+    </div>
+
+    <!-- Detection Timeline from real screenshot -->
+    <div style="background:#f7f9ff;border:1px solid #dde5f8;border-radius:6px;padding:9px 11px;margin-bottom:10px;">
+      <div style="font-size:9.5px;font-weight:700;color:#1a4fba;margin-bottom:7px;">Detection Timeline</div>
+      <div class="tl-item"><div class="tl-dot" style="background:#1565c0;"></div><div class="tl-bar-wrap"><div class="tl-bar" style="width:95%;background:#1565c0;"></div></div><div class="tl-lbl" style="color:#1565c0;">NEVUS 95%</div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:#7e57c2;"></div><div class="tl-bar-wrap"><div class="tl-bar" style="width:57%;background:#7e57c2;"></div></div><div class="tl-lbl" style="color:#7e57c2;">BCC 57%</div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:#1565c0;"></div><div class="tl-bar-wrap"><div class="tl-bar" style="width:71%;background:#1565c0;"></div></div><div class="tl-lbl" style="color:#1565c0;">NEVUS 71%</div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:#7e57c2;"></div><div class="tl-bar-wrap"><div class="tl-bar" style="width:61%;background:#7e57c2;"></div></div><div class="tl-lbl" style="color:#7e57c2;">BCC 61%</div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:#7e57c2;"></div><div class="tl-bar-wrap"><div class="tl-bar" style="width:90%;background:#7e57c2;"></div></div><div class="tl-lbl" style="color:#7e57c2;">BCC 90%</div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:#b0bec5;"></div><div class="tl-bar-wrap"><div class="tl-bar" style="width:5%;background:#b0bec5;"></div></div><div class="tl-lbl" style="color:#999;">NONE</div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:#7e57c2;"></div><div class="tl-bar-wrap"><div class="tl-bar" style="width:86%;background:#7e57c2;"></div></div><div class="tl-lbl" style="color:#7e57c2;">BCC 86%</div></div>
+    </div>
+
+    <!-- Pie chart — only once here -->
+    <div style="background:#f7f9ff;border:1px solid #dde5f8;border-radius:6px;padding:9px 11px;">
+      <div style="font-size:9.5px;font-weight:700;color:#1a4fba;margin-bottom:6px;">Detection Distribution (12 captures)</div>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <svg width="75" height="75" viewBox="0 0 70 70">
+          <circle cx="35" cy="35" r="28" fill="none" stroke="#7e57c2" stroke-width="13" stroke-dasharray="87.96 175.93" stroke-dashoffset="43.98"/>
+          <circle cx="35" cy="35" r="28" fill="none" stroke="#1565c0" stroke-width="13" stroke-dasharray="73.88 175.93" stroke-dashoffset="-43.98"/>
+          <circle cx="35" cy="35" r="28" fill="none" stroke="#b0bec5" stroke-width="13" stroke-dasharray="14.08 175.93" stroke-dashoffset="-117.86"/>
+          <circle cx="35" cy="35" r="18" fill="white"/>
+          <text x="35" y="39" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">12</text>
+        </svg>
+        <div>
+          <div style="font-size:10px;margin-bottom:5px;"><span style="color:#7e57c2;font-weight:700;">●</span> BCC &nbsp;&nbsp;&nbsp;&nbsp;<b>42%</b> &nbsp;(5 images)</div>
+          <div style="font-size:10px;margin-bottom:5px;"><span style="color:#1565c0;font-weight:700;">●</span> Nevus &nbsp;<b>42%</b> &nbsp;(5 images)</div>
+          <div style="font-size:10px;"><span style="color:#b0bec5;font-weight:700;">●</span> None &nbsp;&nbsp;<b>17%</b> &nbsp;(2 images)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end row2 -->
+
+<!-- ROW 3: Technologies + Primary Detection Info -->
+<div class="row3">
+
+  <!-- TECHNOLOGIES -->
+  <div class="card" style="border:none;">
+    <div class="slbl y"><div class="dot"></div>Technologies Used</div>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0a2260" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="6,8 10,12 6,16"/><line x1="13" y1="16" x2="18" y2="16"/></svg></div>
+        <div><div class="tech-name">Python</div><div class="tech-desc">Data processing &amp; scripts</div></div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0a2260" stroke-width="1.6" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div><div class="tech-name">Edge Impulse</div><div class="tech-desc">ML model training platform</div></div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0a2260" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><circle cx="12" cy="13" r="2"/></svg></div>
+        <div><div class="tech-name">ESP32-CAM</div><div class="tech-desc">OV2640 embedded camera</div></div>
+      </div>
+
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0a2260" stroke-width="1.6" stroke-linecap="round"><path d="M4 6h16M4 10h16M4 14h8"/><rect x="2" y="3" width="20" height="18" rx="2"/></svg></div>
+        <div><div class="tech-name">HTML / CSS / JS</div><div class="tech-desc">Wi-Fi web dashboard UI</div></div>
+      </div>
+      <div class="tech-item" style="grid-column:1/3;justify-content:center;">
+        <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0a2260" stroke-width="1.6" stroke-linecap="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1.5" stroke="none" fill="#0a2260"/></svg></div>
+        <div><div class="tech-name">Arduino IDE</div><div class="tech-desc">ESP32 firmware development</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODEL PERFORMANCE + CONFUSION MATRIX -->
+  <div class="card">
+    <div class="slbl b"><div class="dot"></div>Model Performance &amp; Validation</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+
+      <!-- Model stats -->
+      <div>
+        <div style="font-size:9.5px;font-weight:700;color:#1a4fba;margin-bottom:7px;">Performance Metrics</div>
+        <table style="width:100%;border-collapse:collapse;font-size:10.5px;">
+          <tr style="border-bottom:1px solid #eef0fa;"><td style="padding:4px 0;color:#444;">Overall F1 Score</td><td style="text-align:right;font-weight:700;color:#e65100;">83.9%</td></tr>
+          <tr style="border-bottom:1px solid #eef0fa;"><td style="padding:4px 0;color:#444;">BCC F1 Score</td><td style="text-align:right;font-weight:700;color:#5e35b1;">0.82</td></tr>
+          <tr style="border-bottom:1px solid #eef0fa;"><td style="padding:4px 0;color:#444;">Nevus F1 Score</td><td style="text-align:right;font-weight:700;color:#1565c0;">0.86</td></tr>
+          <tr style="border-bottom:1px solid #eef0fa;"><td style="padding:4px 0;color:#444;">Background F1</td><td style="text-align:right;font-weight:700;color:#2e7d32;">1.00</td></tr>
+          <tr style="border-bottom:1px solid #eef0fa;"><td style="padding:4px 0;color:#444;">DSP Time</td><td style="text-align:right;font-weight:700;">7 ms</td></tr>
+          <tr style="border-bottom:1px solid #eef0fa;"><td style="padding:4px 0;color:#444;">Inference Time</td><td style="text-align:right;font-weight:700;">534 ms</td></tr>
+          <tr style="border-bottom:1px solid #eef0fa;"><td style="padding:4px 0;color:#444;">Architecture</td><td style="text-align:right;font-weight:700;">FOMO MobileNetV2</td></tr>
+          <tr><td style="padding:4px 0;color:#444;">Training Epochs</td><td style="text-align:right;font-weight:700;">40</td></tr>
+        </table>
+      </div>
+
+      <!-- Confusion Matrix -->
+      <div>
+        <div style="font-size:9.5px;font-weight:700;color:#1a4fba;margin-bottom:7px;">Confusion Matrix — Validation Set</div>
+        <table style="width:100%;border-collapse:collapse;font-size:9.5px;text-align:center;">
+          <tr>
+            <td style="padding:3px;"></td>
+            <td style="padding:3px;font-weight:700;color:#546e7a;">Backgd</td>
+            <td style="padding:3px;font-weight:700;color:#546e7a;">BCC</td>
+            <td style="padding:3px;font-weight:700;color:#546e7a;">Nevus</td>
+          </tr>
+          <tr>
+            <td style="padding:3px;font-weight:700;color:#546e7a;">Backgd</td>
+            <td style="padding:4px;background:#e8f5e9;color:#2e7d32;font-weight:700;border-radius:4px;">100%</td>
+            <td style="padding:4px;background:#fafafa;color:#aaa;border-radius:4px;">0%</td>
+            <td style="padding:4px;background:#fafafa;color:#aaa;border-radius:4px;">0%</td>
+          </tr>
+          <tr>
+            <td style="padding:3px;font-weight:700;color:#546e7a;">BCC</td>
+            <td style="padding:4px;background:#fce4ec;color:#5e35b1;border-radius:4px;">20%</td>
+            <td style="padding:4px;background:#e8f5e9;color:#2e7d32;font-weight:700;border-radius:4px;">80%</td>
+            <td style="padding:4px;background:#fafafa;color:#aaa;border-radius:4px;">0%</td>
+          </tr>
+          <tr>
+            <td style="padding:3px;font-weight:700;color:#546e7a;">Nevus</td>
+            <td style="padding:4px;background:#fce4ec;color:#c62828;border-radius:4px;">15.4%</td>
+            <td style="padding:4px;background:#fafafa;color:#aaa;border-radius:4px;">0%</td>
+            <td style="padding:4px;background:#e8f5e9;color:#2e7d32;font-weight:700;border-radius:4px;">84.6%</td>
+          </tr>
+        </table>
+        <!-- Training dataset summary -->
+        <div style="margin-top:10px;font-size:9.5px;font-weight:700;color:#1a4fba;margin-bottom:5px;">Training Dataset</div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;padding:3px 0;border-bottom:1px solid #eef0fa;"><span style="color:#444;">Total Images</span><b style="color:#0a2260;">2,800</b></div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;padding:3px 0;border-bottom:1px solid #eef0fa;"><span style="color:#444;">BCC Images</span><b style="color:#5e35b1;">1,400</b></div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;padding:3px 0;"><span style="color:#444;">Nevus Images</span><b style="color:#1565c0;">1,400</b></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end row3 -->
+
+<!-- CONCLUSION -->
+<div class="conclusion-card">
+  <div class="slbl y"><div class="dot"></div>Conclusion</div>
+  <ul>
+    <li>A fully functional embedded AI system was successfully developed and deployed on the ESP32-CAM for real-time skin disease detection of BCC and Nevus — with no cloud dependency, making it accessible in resource-limited settings.</li>
+    <li>The FOMO MobileNetV2 model achieved an overall F1 score of <strong>83.9%</strong>, with Nevus attaining the highest confidence of 88.4% and F1 of 0.86, while BCC achieved 80.4% confidence and F1 of 0.82 — within a 534 ms inference window.</li>
+    <li>The Wi-Fi web dashboard provides live camera streaming, 12-image capture, confidence pie chart, detection timeline, confidence trend graph, and CSV export — all without specialist hardware.</li>
+    <li>Future work includes dataset expansion with Melanoma and Squamous Cell Carcinoma, low-light image enhancement, and development of a dedicated Android mobile application.</li>
+  </ul>
+</div>
+
+</div><!-- end content -->
+
+
+</body>
+</html>
