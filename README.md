@@ -5,8 +5,8 @@
 This project is a Final Year Project (FYP) focused on detecting acne and skin diseases using image data captured through an ESP32-CAM module. The system uses a machine learning model trained via Edge Impulse to classify skin conditions in real time on embedded hardware.
 
 ## Team
-- **Iqra Waheed** — Model Training and Optimization Lead and prototype development
-- **Rimsha Shehzadi** — Data Collection, and Hardware Integration
+- **Iqra Waheed** — Model Training and Optimization Lead
+- **Rimsha Shehzadi** — Data Collection, Hardware Integration and Prototype Development
 - **Supervisor:** Dr. Usama Ahmad
 
 ## How It Works (Project Flow)
